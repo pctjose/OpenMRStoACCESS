@@ -1,0 +1,85 @@
+﻿Na maganja da costa o NID 04090601/09/1142 esta duplicado para o mesmo paciente mas com patient_id 3522 e 3523.
+e preciso anular o paciente 3522 pois esta duplicado e o real e 3523 com consultas.
+
+A tabela t_paciente devera ser criada na base de dados OpenMRS
+
+A stored procedure ira encher essa tabelas, os sqls foram retirados e separados a partir do ficheiro 'TabelaPaciente.sql'
+
+Eurico: 12.01.12
+
+Morrumbala o NID 04130601/010/0169 esta registado duas vezes para o mesmo paciente e preciso rectificar.
+
+TABELA T_TARV
+Retirei a chave primaria multipla. Pois nao faz sentido ter a chave multipla enquanto temos a um campo auto incremento
+Acrescentei o campo encounter_id (text) para facilitar update de outros campos.
+
+TABELA t_histestadopaciente:
+Acrescentei o campo encounter_id (text) para facilitar update de outros campos. Devera ser removido depois.
+
+
+Tabela T_infeccoesoportunistaseguimento
+
+Editei o campo codigoio o size de 50 para 150
+
+Ezequiel 17.01.12
+
+A tabela ADULTO, foi dividido em 2 querys, devido ao elevado numeros de selects
+
+18.01.12
+deve-se acrescentar o campo nid na tabelas PAI e MAE
+
+Eurico 20/01/2012
+Ha uma confusao dos ID entre as tabelas t_aconselhamento e t_actividadeaconselhamento, pelo seu conteudo,
+o ideal seria a tabela t_actividadeaconselhamento e que deveria ter idaconselhamento como auto incremento e chave primaria
+e a tabela aconselhamento.
+Me pa
+
+
+Tabela T_paciente, campo designacaoprov alterei para 250 o tamanho.
+A tabela ADULTO, foi dividido em 2 querys, devido ao elevado numeros de selects
+
+
+Tabelas Exportadas (Eurico)
+T_ACONSELHAMENTO
+T_ACTIVIDADEACONSELHAMENTO
+T_PACIENTE
+T_RESULTADOSLABORATORIO
+T_SEGUIMENTO
+T_INFECCOESOPORTUNISTASEGUIMENTO
+T_TRATAMENTOSEGUIMENTO
+T_TARV
+T_HISTESTADOPACIENTE
+T_ANTECEDENTESCLINICOSPACIENTE
+
+Tabelas Exportadas (Ezequiel)
+T_PAI
+T_MAE
+T_EXPOSICAOTARVMAE
+T_EXPOSICAOTARVNASCENCA
+T_TRATAMENTOTB
+T_QUESTIONARIOTB
+T_CRIANCA
+T_BUSCAACTIVA
+
+Tabelas Exportadas (Domingos)
+
+
+
+Ezequiel 25/01/2012
+
+Na T_Crianca o campo local deixou de ser obrigatorio
+Morrumbala:
+O paciente 04130601/06/0003 tem dois formularios Parte A introduzidos.
+O paciente 04130601/010/0807 tem tres formularios Parte A introduzidos.
+O paciente 04130601/07/0222 tem dois formularios Parte A introduzidos.
+O paciente 04130601/07/0719 tem cinco formularios Parte A Introduzidos.
+O Paciente 04130601/08/0479 tem dois formularios Parte A Introduzidos.
+O Paciente 04130601/09/0027 tem dois formularios Parte A Introduzidos.
+O Paciente 04130601/09/0700 tem dois formularios Parte A Introduzidos (E dois Rastreio na mesma data na Abertura 12-10-2009)
+O Paciente 04130601/09/0784 tem dois formularios Parte A Introduzidos.
+O Paciente 04130601/11/0268 tem dois formularios Parte A Introduzidos.
+
+PENDENTES ATE - 05-02-12
+Actualizar ptvquais em t_adulto
+Actualizar tipoacidente em t_adulto
+Exportar t_diagnosticoseguimento
